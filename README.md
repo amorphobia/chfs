@@ -4,5 +4,5 @@
 ## 用法 / Usage
 ```
 docker pull amorphobia/chfs
-docker run -d -p 80:80 -v <host_path>:<shared_path> -e USER=<user_name> -e PASS=<password> -e SHARE=<shared_path> amorphobia/chfs
+docker run -d -p 80:80 -v <host_path>:<shared_path> -e USER=<user_name> -e PASS=<password> -e SHARE=<shared_path> -e FILEBOX=<full_access_path> amorphobia/chfs
 ```
