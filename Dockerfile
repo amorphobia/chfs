@@ -2,14 +2,10 @@ FROM alpine:latest
 
 LABEL maintainer="Xuesong Peng <@amorphobia>"
 
-ENV SHARE=/home \
-    FILEBOX=filebox \
-    USER=root \
-    PASS=admin \
-    MASK=rwd
+ENV RULE="::r|user:admin:r:filebox:rwd"
 
 COPY chfs /
 
 EXPOSE 80
 
-CMD ["/bin/sh", "-c", "/chfs --rule=\"::r|$USER:$PASS:r:$FILEBOX:$MASK\" --path=$SHARE"]
+CMD ["/bin/sh", "-c", "/chfs --rule=$RULE --path=/home"]
